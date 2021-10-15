@@ -1,0 +1,6 @@
+framework module Pods_lsj_PrivateProtocolAlert_Tests {
+  umbrella header "Pods-lsj-PrivateProtocolAlert_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

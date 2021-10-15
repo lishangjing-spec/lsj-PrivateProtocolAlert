@@ -1,0 +1,6 @@
+framework module Pods_lsj_PrivateProtocolAlert_Example {
+  umbrella header "Pods-lsj-PrivateProtocolAlert_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

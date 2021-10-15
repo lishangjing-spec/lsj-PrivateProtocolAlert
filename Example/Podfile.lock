@@ -1,0 +1,16 @@
+PODS:
+  - lsj-PrivateProtocolAlert (0.1.0)
+
+DEPENDENCIES:
+  - lsj-PrivateProtocolAlert (from `../`)
+
+EXTERNAL SOURCES:
+  lsj-PrivateProtocolAlert:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  lsj-PrivateProtocolAlert: 3b7a56f8c29a88dd8bfb226ef2f519f0434f6ccd
+
+PODFILE CHECKSUM: 8c51e3e5494fec22afa663ed2fcf3b7239725f0e
+
+COCOAPODS: 1.9.1
