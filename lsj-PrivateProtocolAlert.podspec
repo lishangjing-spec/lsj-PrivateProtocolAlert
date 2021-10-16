@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'lsj-PrivateProtocolAlert'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of lsj-PrivateProtocolAlert.'
+  s.summary          = '隐私政策、弹窗'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,13 +17,13 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = "隐私政策弹窗"
+  s.description      = '这个仓库提供了，快速解决审核政策，在启动时必须获得用户同意隐私政策，才可进入。'
 
   s.homepage         = 'https://github.com/lishangjing-spec/lsj-PrivateProtocolAlert'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'lsj' => '534016847@qq.com' }
-  s.source           = { :git => 'https://github.com/lsj/lsj-PrivateProtocolAlert.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/lishangjing-spec/lsj-PrivateProtocolAlert.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
@@ -37,4 +37,6 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Masonry', '~> 1.1.0'
+  s.dependency 'YYText'
 end

@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "LSJPrivateProtocolAlert.h"
 
 FOUNDATION_EXPORT double lsj_PrivateProtocolAlertVersionNumber;
 FOUNDATION_EXPORT const unsigned char lsj_PrivateProtocolAlertVersionString[];

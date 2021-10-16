@@ -7,13 +7,45 @@
 //
 
 #import "LSJAppDelegate.h"
-
+#import "LSJPrivateProtocolAlert.h"
+#import "LSJViewController.h"
 @implementation LSJAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // 如果展示过，会直接执行 sure
+    LSJPrivateProtocolAlert *alert = [LSJPrivateProtocolAlert new];
+    alert.appName = @"测试项目";
+    alert.completionBlock = ^{
+        [self startApplication:application didFinishLaunchingWithOptions:launchOptions];
+    };
+    [alert show];
+
+//    NSString *guide = [[NSUserDefaults standardUserDefaults] objectForKey:@"lsj-PrivateProtocolStandard"];
+    
+//    LSJPrivateProtocolAlert *alert = [LSJPrivateProtocolAlert new];
+//    [UIApplication sharedApplication].delegate.window.rootViewController = alert;
+//    if(guide){
+//        
+//    }else{
+//        
+//        kWeakSelf(self);
+//        alert.sureClick = ^{
+//            kStrongSelf(self);
+//            [UserDefaultsManager setObject:@"1" forKey:@"PrivateProtocolStandard"];
+//            [self beginApplication:application didFinishLaunchingWithOptions:launchOptions];
+//        };
+//    }
     return YES;
+}
+
+-(void)startApplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    [UIApplication sharedApplication].delegate.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [[UIApplication sharedApplication].delegate.window makeKeyAndVisible];
+    [UIApplication sharedApplication].delegate.window.backgroundColor = [UIColor whiteColor];
+    [UIApplication sharedApplication].delegate.window.rootViewController = [LSJViewController new];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
