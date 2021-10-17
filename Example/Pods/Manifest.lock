@@ -9,7 +9,7 @@ DEPENDENCIES:
   - lsj-PrivateProtocolAlert (from `../`)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - Masonry
     - YYText
 

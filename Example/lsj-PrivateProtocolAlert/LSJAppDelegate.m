@@ -15,37 +15,23 @@
 {
     // Override point for customization after application launch.
     
-    // 如果展示过，会直接执行 sure
+    // 用户点击过同意，会直接执行 completionBlock
     LSJPrivateProtocolAlert *alert = [LSJPrivateProtocolAlert new];
     alert.appName = @"测试项目";
+    alert.userAgreementURL = [NSURL URLWithString:@"https://www.jianshu.com"];
+    alert.privacyPolicyURL = [NSURL URLWithString:@"https://www.juejin.com"];
     alert.completionBlock = ^{
         [self startApplication:application didFinishLaunchingWithOptions:launchOptions];
     };
     [alert show];
-
-//    NSString *guide = [[NSUserDefaults standardUserDefaults] objectForKey:@"lsj-PrivateProtocolStandard"];
-    
-//    LSJPrivateProtocolAlert *alert = [LSJPrivateProtocolAlert new];
-//    [UIApplication sharedApplication].delegate.window.rootViewController = alert;
-//    if(guide){
-//        
-//    }else{
-//        
-//        kWeakSelf(self);
-//        alert.sureClick = ^{
-//            kStrongSelf(self);
-//            [UserDefaultsManager setObject:@"1" forKey:@"PrivateProtocolStandard"];
-//            [self beginApplication:application didFinishLaunchingWithOptions:launchOptions];
-//        };
-//    }
     return YES;
 }
 
 -(void)startApplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    [UIApplication sharedApplication].delegate.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [[UIApplication sharedApplication].delegate.window makeKeyAndVisible];
-    [UIApplication sharedApplication].delegate.window.backgroundColor = [UIColor whiteColor];
-    [UIApplication sharedApplication].delegate.window.rootViewController = [LSJViewController new];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [LSJViewController new];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

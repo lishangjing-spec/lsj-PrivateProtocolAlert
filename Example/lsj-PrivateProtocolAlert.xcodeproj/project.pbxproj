@@ -40,6 +40,7 @@
 		16ADD4CAECD20F0FC245597F /* Pods-lsj-PrivateProtocolAlert_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lsj-PrivateProtocolAlert_Tests.release.xcconfig"; path = "Target Support Files/Pods-lsj-PrivateProtocolAlert_Tests/Pods-lsj-PrivateProtocolAlert_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		271A399B320DF2215E79268E /* Pods-lsj-PrivateProtocolAlert_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lsj-PrivateProtocolAlert_Tests.debug.xcconfig"; path = "Target Support Files/Pods-lsj-PrivateProtocolAlert_Tests/Pods-lsj-PrivateProtocolAlert_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		28AA39B930643A800DBC00B0 /* Pods-lsj-PrivateProtocolAlert_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lsj-PrivateProtocolAlert_Example.debug.xcconfig"; path = "Target Support Files/Pods-lsj-PrivateProtocolAlert_Example/Pods-lsj-PrivateProtocolAlert_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		2D52BD5353F6458FF8C47D1C /* Pods-lsj-PrivateProtocolAlert_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lsj-PrivateProtocolAlert_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-lsj-PrivateProtocolAlert_Example/Pods-lsj-PrivateProtocolAlert_Example.release.xcconfig"; sourceTree = "<group>"; };
 		44C9A0A0464D895465855455 /* Pods-lsj-PrivateProtocolAlert_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lsj-PrivateProtocolAlert_Example.release.xcconfig"; path = "Target Support Files/Pods-lsj-PrivateProtocolAlert_Example/Pods-lsj-PrivateProtocolAlert_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* lsj-PrivateProtocolAlert_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lsj-PrivateProtocolAlert_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,11 +63,14 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		643413B89FF4280D83634060 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7DEE3EFB465695235F696AC2 /* Pods-lsj-PrivateProtocolAlert_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lsj-PrivateProtocolAlert_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lsj-PrivateProtocolAlert_Example/Pods-lsj-PrivateProtocolAlert_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		81F59CF9403863751677EF0B /* Pods-lsj-PrivateProtocolAlert_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lsj-PrivateProtocolAlert_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lsj-PrivateProtocolAlert_Tests/Pods-lsj-PrivateProtocolAlert_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		84B6A6103661AB5945A05106 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFC8AEFCB3B6A81AEC6B8F70 /* Pods_lsj_PrivateProtocolAlert_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lsj_PrivateProtocolAlert_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E5704005480B4249035ADE /* Pods_lsj_PrivateProtocolAlert_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lsj_PrivateProtocolAlert_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E794E036C263EC7A29AA56 /* lsj-PrivateProtocolAlert.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "lsj-PrivateProtocolAlert.podspec"; path = "../lsj-PrivateProtocolAlert.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E22610D87D633651AA4460B9 /* Pods-lsj-PrivateProtocolAlert_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lsj-PrivateProtocolAlert_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-lsj-PrivateProtocolAlert_Tests/Pods-lsj-PrivateProtocolAlert_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,10 @@
 				44C9A0A0464D895465855455 /* Pods-lsj-PrivateProtocolAlert_Example.release.xcconfig */,
 				271A399B320DF2215E79268E /* Pods-lsj-PrivateProtocolAlert_Tests.debug.xcconfig */,
 				16ADD4CAECD20F0FC245597F /* Pods-lsj-PrivateProtocolAlert_Tests.release.xcconfig */,
+				7DEE3EFB465695235F696AC2 /* Pods-lsj-PrivateProtocolAlert_Example.debug.xcconfig */,
+				2D52BD5353F6458FF8C47D1C /* Pods-lsj-PrivateProtocolAlert_Example.release.xcconfig */,
+				81F59CF9403863751677EF0B /* Pods-lsj-PrivateProtocolAlert_Tests.debug.xcconfig */,
+				E22610D87D633651AA4460B9 /* Pods-lsj-PrivateProtocolAlert_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -300,15 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-lsj-PrivateProtocolAlert_Example-checkManifestLockResult.txt",
 			);
@@ -322,15 +326,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-lsj-PrivateProtocolAlert_Tests-checkManifestLockResult.txt",
 			);
