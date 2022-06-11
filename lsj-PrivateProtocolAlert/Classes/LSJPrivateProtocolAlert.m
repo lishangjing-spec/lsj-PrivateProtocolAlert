@@ -192,8 +192,13 @@
         }];
         
         [attrString yy_setTextHighlightRange:range2 color:self.highlightColor backgroundColor:[UIColor clearColor] tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
-            SFSafariViewController * safariVC = [[SFSafariViewController alloc]initWithURL:self.privacyPolicyURL];
-            [self presentViewController:safariVC animated:NO completion:nil];
+            kStrongSelf(self);
+            if(self.privacyPolicyClickBlock){
+                self.privacyPolicyClickBlock();
+            }else{
+                SFSafariViewController * safariVC = [[SFSafariViewController alloc]initWithURL:self.privacyPolicyURL];
+                [self presentViewController:safariVC animated:NO completion:nil];
+            }
         }];
         [attrString yy_setLineSpacing:5 range:NSMakeRange(0, contentString.length)];
         
