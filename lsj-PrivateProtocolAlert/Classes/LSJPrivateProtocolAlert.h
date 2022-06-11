@@ -2,7 +2,7 @@
 //  PrivateProtocolAlert.h
 //  JMBaseProject
 //
-//  Created by 温州天媒软件 on 2021/3/29.
+//  Created by Lishangjing on 2021/3/29.
 //  Copyright © 2021 liuny. All rights reserved.
 //
 
