@@ -1,6 +1,0 @@
-framework module lsj_PrivateProtocolAlert {
-  umbrella header "lsj-PrivateProtocolAlert-umbrella.h"
-
-  export *
-  module * { export * }
-}
