@@ -98,7 +98,7 @@ lsj-PrivateProtocolAlert is available through [CocoaPods](https://cocoapods.org)
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'lsj-PrivateProtocolAlert', '~> 0.2.0'
+pod 'lsj-PrivateProtocolAlert', '~> 0.3.0'
 ```
 
 ## Author
