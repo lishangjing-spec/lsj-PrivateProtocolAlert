@@ -87,15 +87,6 @@
 // MARK: - Method
 
 -(void)show{
-//#if DEBUG
-//    [UIApplication sharedApplication].delegate.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    [[UIApplication sharedApplication].delegate.window makeKeyAndVisible];
-//    [UIApplication sharedApplication].delegate.window.backgroundColor = [UIColor whiteColor];
-//    [UIApplication sharedApplication].delegate.window.rootViewController = self;
-//
-//    return;
-//#endif
-    
     NSString *guide = [[NSUserDefaults standardUserDefaults] objectForKey:LSJPrivateProtocolAlertUserDefaultsKey];
     if(guide){
         if(self.completionBlock){
@@ -147,7 +138,8 @@
 -(UITextView *)descLabel{
     if (!_descLabel) {
         _descLabel = [UITextView new];
-        _descLabel.editable = YES;
+        _descLabel.editable = NO;// 可编辑的
+        _descLabel.selectable = YES;// 可选的
         _descLabel.scrollEnabled = NO;
         _descLabel.textContainerInset = UIEdgeInsetsZero;
         _descLabel.textContainer.lineFragmentPadding = 0;
