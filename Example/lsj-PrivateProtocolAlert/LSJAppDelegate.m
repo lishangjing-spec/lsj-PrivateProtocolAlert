@@ -9,6 +9,11 @@
 #import "LSJAppDelegate.h"
 #import "LSJPrivateProtocolAlert.h"
 #import "LSJViewController.h"
+
+#define kWeakSelf(type)  __weak typeof(type) weak##type = type;
+#define kStrongSelf(type) __strong typeof(type) type = weak##type;
+
+
 @implementation LSJAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -20,18 +25,21 @@
     alert.appName = @"测试项目";
     alert.userAgreementURL = [NSURL URLWithString:@"https://www.jianshu.com"];
     alert.privacyPolicyURL = [NSURL URLWithString:@"https://www.juejin.com"];
+    kWeakSelf(self);
     alert.completionBlock = ^{
-        [self startApplication:application didFinishLaunchingWithOptions:launchOptions];
+        kStrongSelf(self);
+        self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        [self.window makeKeyAndVisible];
+        self.window.backgroundColor = [UIColor whiteColor];
+        self.window.rootViewController = [LSJViewController new];
     };
     [alert show];
+    
     return YES;
 }
 
 -(void)startApplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [self.window makeKeyAndVisible];
-    self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [LSJViewController new];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
