@@ -13,6 +13,12 @@
 #define kWeakSelf(type)  __weak typeof(type) weak##type = type;
 #define kStrongSelf(type) __strong typeof(type) type = weak##type;
 
+@interface LSJAppDelegate()
+
+@property (nonatomic, strong) LSJPrivateProtocolAlert *alert;
+
+@end
+
 
 @implementation LSJAppDelegate
 
@@ -21,19 +27,19 @@
     // Override point for customization after application launch.
     
     // 用户点击过同意，会直接执行 completionBlock
-    LSJPrivateProtocolAlert *alert = [LSJPrivateProtocolAlert new];
-    alert.appName = @"测试项目";
-    alert.userAgreementURL = [NSURL URLWithString:@"https://www.jianshu.com"];
-    alert.privacyPolicyURL = [NSURL URLWithString:@"https://www.juejin.com"];
+    _alert = [LSJPrivateProtocolAlert new];
+    _alert.appName = @"测试项目";
+    _alert.userAgreementURL = [NSURL URLWithString:@"https://www.jianshu.com"];
+    _alert.privacyPolicyURL = [NSURL URLWithString:@"https://www.juejin.com"];
     kWeakSelf(self);
-    alert.completionBlock = ^{
+    _alert.completionBlock = ^{
         kStrongSelf(self);
         self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         [self.window makeKeyAndVisible];
         self.window.backgroundColor = [UIColor whiteColor];
         self.window.rootViewController = [LSJViewController new];
     };
-    [alert show];
+    [_alert show];
     
     return YES;
 }
