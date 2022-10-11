@@ -17,22 +17,41 @@
 
 ## Usage
 ```
+
+#define kWeakSelf(type)  __weak typeof(type) weak##type = type;
+#define kStrongSelf(type) __strong typeof(type) type = weak##type;
+
+@interface LSJAppDelegate()
+
+@property (nonatomic, strong) LSJPrivateProtocolAlert *alert;
+
+@end
+
+
+@implementation LSJAppDelegate
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{    
+{
+    // Override point for customization after application launch.
+    
     // 用户点击过同意，会直接执行 completionBlock
-    LSJPrivateProtocolAlert *alert = [LSJPrivateProtocolAlert new];
-    alert.appName = @"测试项目";
-    alert.userAgreementURL = [NSURL URLWithString:@"https://www.jianshu.com"];
-    alert.privacyPolicyURL = [NSURL URLWithString:@"https://www.juejin.com"];
-    alert.completionBlock = ^{
-        [self startApplication:application didFinishLaunchingWithOptions:launchOptions];
+    _alert = [LSJPrivateProtocolAlert new];
+    _alert.appName = @"测试项目";
+    _alert.userAgreementURL = [NSURL URLWithString:@"https://www.jianshu.com"];
+    _alert.privacyPolicyURL = [NSURL URLWithString:@"https://www.juejin.com"];
+    __weak typeof(self) weakSelf = self;
+    _alert.completionBlock = ^{
+        __strong typeof(self) strongSelf = weakSelf;
+        [strongSelf startApplication:application didFinishLaunchingWithOptions:launchOptions];
     };
-    [alert show];
+    [_alert show];
+    
+    return YES;
 }
 
 -(void)startApplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window makeKeyAndVisible];
+    [self.window makeKeyAndVisible];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [LSJViewController new];
 }
@@ -98,7 +117,7 @@ lsj-PrivateProtocolAlert is available through [CocoaPods](https://cocoapods.org)
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'lsj-PrivateProtocolAlert', '~> 0.3.0'
+pod 'lsj-PrivateProtocolAlert', '~> 0.4.0'
 ```
 
 ## Author
