@@ -87,15 +87,14 @@
 // MARK: - Method
 
 -(void)show{
-#if DEBUG
-    [UIApplication sharedApplication].delegate.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [[UIApplication sharedApplication].delegate.window makeKeyAndVisible];
-    [UIApplication sharedApplication].delegate.window.backgroundColor = [UIColor whiteColor];
-    [UIApplication sharedApplication].delegate.window.rootViewController = self;
-    
-    return;
-#endif
-    
+//#if DEBUG
+//    [UIApplication sharedApplication].delegate.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    [[UIApplication sharedApplication].delegate.window makeKeyAndVisible];
+//    [UIApplication sharedApplication].delegate.window.backgroundColor = [UIColor whiteColor];
+//    [UIApplication sharedApplication].delegate.window.rootViewController = self;
+//
+//    return;
+//#endif
     
     NSString *guide = [[NSUserDefaults standardUserDefaults] objectForKey:LSJPrivateProtocolAlertUserDefaultsKey];
     if(guide){

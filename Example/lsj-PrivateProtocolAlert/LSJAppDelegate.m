@@ -31,13 +31,10 @@
     _alert.appName = @"测试项目";
     _alert.userAgreementURL = [NSURL URLWithString:@"https://www.jianshu.com"];
     _alert.privacyPolicyURL = [NSURL URLWithString:@"https://www.juejin.com"];
-    kWeakSelf(self);
+    __weak typeof(self) weakSelf = self;
     _alert.completionBlock = ^{
-        kStrongSelf(self);
-        self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        [self.window makeKeyAndVisible];
-        self.window.backgroundColor = [UIColor whiteColor];
-        self.window.rootViewController = [LSJViewController new];
+        __strong typeof(self) strongSelf = weakSelf;
+        [strongSelf startApplication:application didFinishLaunchingWithOptions:launchOptions];
     };
     [_alert show];
     
@@ -45,7 +42,10 @@
 }
 
 -(void)startApplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [LSJViewController new];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
