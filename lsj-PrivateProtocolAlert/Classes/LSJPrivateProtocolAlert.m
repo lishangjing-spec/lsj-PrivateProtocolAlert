@@ -146,6 +146,7 @@
         _descLabel.linkTextAttributes = @{NSForegroundColorAttributeName:self.highlightColor};
         _descLabel.delegate = self;
         _descLabel.userInteractionEnabled = true;
+        _descLabel.backgroundColor = [UIColor whiteColor];
         
         NSString *contentString = [NSString stringWithFormat:@"%@深知个人信息对您的重要性，因此我们将竭尽全力保障用户的隐私信息安全。\n\n您可以阅读完整版《用户协议》《隐私政策》详细了解我们如何保护您的权益。\n\n我们将严格按照政策要求使用和保护您的个人信息，如您同意以上内容，请点击同意，开始使用我们的产品与服务！",self.appName];
         NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:contentString];
