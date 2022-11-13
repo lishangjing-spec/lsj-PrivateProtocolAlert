@@ -89,8 +89,8 @@
 -(void)show{
     NSString *guide = [[NSUserDefaults standardUserDefaults] objectForKey:LSJPrivateProtocolAlertUserDefaultsKey];
     if(guide){
-        if(self.completionBlock){
-            self.completionBlock();
+        if(_delegate && [_delegate respondsToSelector:@selector(lsjPrivateProtocolAlert_completion)]){
+            [_delegate lsjPrivateProtocolAlert_completion];
         }
     }else{
         [UIApplication sharedApplication].delegate.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -108,8 +108,8 @@
 -(void)sureButtonClick{
     [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:LSJPrivateProtocolAlertUserDefaultsKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    if(self.completionBlock){
-        self.completionBlock();
+    if(_delegate && [_delegate respondsToSelector:@selector(lsjPrivateProtocolAlert_completion)]){
+        [_delegate lsjPrivateProtocolAlert_completion];
     }
 }
 

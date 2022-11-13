@@ -13,7 +13,7 @@
 #define kWeakSelf(type)  __weak typeof(type) weak##type = type;
 #define kStrongSelf(type) __strong typeof(type) type = weak##type;
 
-@interface LSJAppDelegate()
+@interface LSJAppDelegate()<LSJPrivateProtocolAlertDelegate>
 
 @property (nonatomic, strong) LSJPrivateProtocolAlert *alert;
 
@@ -31,17 +31,14 @@
     _alert.appName = @"测试项目";
     _alert.userAgreementURL = [NSURL URLWithString:@"https://www.jianshu.com"];
     _alert.privacyPolicyURL = [NSURL URLWithString:@"https://www.juejin.com"];
-    __weak typeof(self) weakSelf = self;
-    _alert.completionBlock = ^{
-        __strong typeof(self) strongSelf = weakSelf;
-        [strongSelf startApplication:application didFinishLaunchingWithOptions:launchOptions];
-    };
+    _alert.delegate = self;
     [_alert show];
     
     return YES;
 }
 
--(void)startApplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+-(void)lsjPrivateProtocolAlert_completion{
+    _alert = nil;
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     self.window.backgroundColor = [UIColor whiteColor];

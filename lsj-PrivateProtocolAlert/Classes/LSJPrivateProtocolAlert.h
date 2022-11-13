@@ -10,7 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+@protocol LSJPrivateProtocolAlertDelegate <NSObject>
+
+@required
+
+/// 完成
+- (void)lsjPrivateProtocolAlert_completion;
+
+@end
+
 @interface LSJPrivateProtocolAlert : UIViewController
+
+@property (nonatomic, weak) id<LSJPrivateProtocolAlertDelegate> delegate;
 
 // 自定义确定按钮的样式
 @property (nonatomic,strong) UIButton *sureButton;/**< 确认按钮 */
@@ -31,8 +43,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic) void(^userAgreementClickBlock)(void);
 @property (copy, nonatomic) void(^privacyPolicyClickBlock)(void);
 
-// 完成事件
-@property (copy, nonatomic) void(^completionBlock)(void);
 
 
 -(void)show;/**< 显示弹窗 */
