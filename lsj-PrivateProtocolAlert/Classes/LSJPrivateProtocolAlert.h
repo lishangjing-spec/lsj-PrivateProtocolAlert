@@ -18,6 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 完成
 - (void)lsjPrivateProtocolAlert_completion;
 
+
+/// 自定义用户协议、隐私政策点击事件
+- (void)lsjPrivateProtocolAlert_userAgreementClick;
+- (void)lsjPrivateProtocolAlert_privacyPolicyClick;
+
 @end
 
 @interface LSJPrivateProtocolAlert : UIViewController
@@ -36,12 +41,6 @@ NS_ASSUME_NONNULL_BEGIN
 // 设置 URL
 @property (nonatomic,strong) NSURL *userAgreementURL;/**< 用户协议地址 */
 @property (nonatomic,strong) NSURL *privacyPolicyURL;/**< 隐私政策地址 */
-
-
-
-// 或者如果不跳转web可自定义事件
-@property (copy, nonatomic) void(^userAgreementClickBlock)(void);
-@property (copy, nonatomic) void(^privacyPolicyClickBlock)(void);
 
 
 

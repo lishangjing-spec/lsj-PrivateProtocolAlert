@@ -181,16 +181,16 @@
 
 -(BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange{
     if ([URL.scheme isEqualToString:@"userAgreement"]) {
-        if(self.userAgreementClickBlock){
-            self.userAgreementClickBlock();
+        if(_delegate && [_delegate respondsToSelector:@selector(lsjPrivateProtocolAlert_userAgreementClick)]){
+            [_delegate lsjPrivateProtocolAlert_userAgreementClick];
         }else{
             SFSafariViewController * safariVC = [[SFSafariViewController alloc]initWithURL:self.userAgreementURL];
             [self presentViewController:safariVC animated:NO completion:nil];
         }
         return false;
     }else if([URL.scheme isEqualToString:@"privacy"]){
-        if(self.privacyPolicyClickBlock){
-            self.privacyPolicyClickBlock();
+        if(_delegate && [_delegate respondsToSelector:@selector(lsjPrivateProtocolAlert_privacyPolicyClick)]){
+            [_delegate lsjPrivateProtocolAlert_privacyPolicyClick];
         }else{
             SFSafariViewController * safariVC = [[SFSafariViewController alloc]initWithURL:self.privacyPolicyURL];
             [self presentViewController:safariVC animated:NO completion:nil];
