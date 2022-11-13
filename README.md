@@ -5,6 +5,15 @@
 [![License](https://img.shields.io/cocoapods/l/lsj-PrivateProtocolAlert.svg?style=flat)](https://cocoapods.org/pods/lsj-PrivateProtocolAlert)
 [![Platform](https://img.shields.io/cocoapods/p/lsj-PrivateProtocolAlert.svg?style=flat)](https://cocoapods.org/pods/lsj-PrivateProtocolAlert)
 
+## 修订历史
+
+| 文档版本 | 修订日期   | 修订说明               |
+|----------|------------|------------------------|
+| v0.5.0   | 2022.11.13 | 将 block 改为 delegate |
+| v0.4.0   | 2022.10.11 | 移除所有三方库，使用更简洁的方式代替 |
+
+
+
 
 ## Overview
 
@@ -17,9 +26,6 @@
 
 ## Usage
 ```
-
-#define kWeakSelf(type)  __weak typeof(type) weak##type = type;
-#define kStrongSelf(type) __strong typeof(type) type = weak##type;
 
 @interface LSJAppDelegate()
 
@@ -39,17 +45,14 @@
     _alert.appName = @"测试项目";
     _alert.userAgreementURL = [NSURL URLWithString:@"https://www.jianshu.com"];
     _alert.privacyPolicyURL = [NSURL URLWithString:@"https://www.juejin.com"];
-    __weak typeof(self) weakSelf = self;
-    _alert.completionBlock = ^{
-        __strong typeof(self) strongSelf = weakSelf;
-        [strongSelf startApplication:application didFinishLaunchingWithOptions:launchOptions];
-    };
+    _alert.delegate = self;
     [_alert show];
-    
+        
     return YES;
 }
 
--(void)startApplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+-(void)lsjPrivateProtocolAlert_completion{
+    _alert = nil;
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -58,31 +61,6 @@
 
 ```
 
-### LSJPrivateProtocolAlert.h
-```
-// 自定义确定按钮的样式
-@property (nonatomic,strong) UIButton *sureButton;/**< 确认按钮 */
-
-@property (nonatomic,strong) NSString *appName;/**< 设置应用名称 */
-@property (nonatomic,strong) UIColor *nomalTextColor;/**<  设置文字颜色 Default: 333333 */
-@property (nonatomic,strong) UIColor *highlightColor;/**<  设置《用户协议》《隐私政策》颜色 Default: 4A90E2 */
-
-
-// MARK: 隐私政策
-// 设置 URL
-@property (nonatomic,strong) NSURL *userAgreementURL;/**< 用户协议地址 */
-@property (nonatomic,strong) NSURL *privacyPolicyURL;/**< 隐私政策地址 */
-// 或者如果不跳转web可自定义事件
-@property (copy, nonatomic) void(^userAgreementClickBlock)(void);
-@property (copy, nonatomic) void(^privacyPolicyClickBlock)(void);
-
-// 完成事件
-@property (copy, nonatomic) void(^completionBlock)(void);
-
-
--(void)show;/**< 显示弹窗 */
-
-```
 
 
 ### 给按钮设置渐变色
@@ -117,7 +95,7 @@ lsj-PrivateProtocolAlert is available through [CocoaPods](https://cocoapods.org)
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'lsj-PrivateProtocolAlert', '~> 0.4.0'
+pod 'lsj-PrivateProtocolAlert', '~> 0.5.0'
 ```
 
 ## Author

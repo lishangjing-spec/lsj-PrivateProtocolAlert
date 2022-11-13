@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 完成
 - (void)lsjPrivateProtocolAlert_completion;
 
+@optional
 
 /// 自定义用户协议、隐私政策点击事件
 - (void)lsjPrivateProtocolAlert_userAgreementClick;
