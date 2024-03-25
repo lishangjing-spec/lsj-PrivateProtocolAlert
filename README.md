@@ -46,7 +46,7 @@
     _alert = [LSJPrivateProtocolAlert new];
     _alert.appName = @"测试项目";
     _alert.userAgreementURL = [NSURL URLWithString:@"https://www.jianshu.com"];
-    _alert.privacyPolicyURL = [NSURL URLWithString:@"https://www.juejin.com"];
+    _alert.privacyPolicyURL = [NSURL URLWithString:@"https://www.juejin.cn"];
     _alert.delegate = self;
     [_alert show];
         
