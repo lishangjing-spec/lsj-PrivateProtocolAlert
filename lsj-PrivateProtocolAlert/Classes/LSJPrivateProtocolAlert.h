@@ -1,6 +1,6 @@
 //
 //  PrivateProtocolAlert.h
-//  JMBaseProject
+//  lsj-PrivateProtocolAlert
 //
 //  Created by Lishangjing on 2021/3/29.
 //  Copyright © 2021 liuny. All rights reserved.
@@ -39,6 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 // MARK: 隐私政策
+
 // 设置 URL
 @property (nonatomic,strong) NSURL *userAgreementURL;/**< 用户协议地址 */
 @property (nonatomic,strong) NSURL *privacyPolicyURL;/**< 隐私政策地址 */

@@ -1,6 +1,6 @@
 //
 //  PrivateProtocolAlert.m
-//  JMBaseProject
+//  lsj-PrivateProtocolAlert
 //
 //  Created by Lishangjing on 2021/3/29.
 //  Copyright © 2021 liuny. All rights reserved.
@@ -27,8 +27,6 @@
     if(self){
         self.nomalTextColor = [UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1];
         self.highlightColor = [UIColor colorWithRed:74.0/255.0 green:144.0/255.0 blue:226.0/255.0 alpha:1];
-        self.userAgreementURL = [NSURL URLWithString:@"https://www.jianshu.com"];
-        self.privacyPolicyURL = [NSURL URLWithString:@"https://juejin.cn/"];
         NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
         self.appName = [infoDictionary objectForKey:@"CFBundleDisplayName"];
         self.sureButton.layer.masksToBounds = true;

@@ -27,6 +27,8 @@
 ## Usage
 ```
 
+#import "LSJPrivateProtocolAlert.h"
+
 @interface LSJAppDelegate()
 
 @property (nonatomic, strong) LSJPrivateProtocolAlert *alert;
