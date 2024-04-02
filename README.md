@@ -1,5 +1,9 @@
 # lsj-PrivateProtocolAlert
+---
 
+目前苹果审核没有硬性要求需要隐私弹窗，Android 会有要求
+
+---
 [![CI Status](https://img.shields.io/travis/lsj/lsj-PrivateProtocolAlert.svg?style=flat)](https://travis-ci.org/lsj/lsj-PrivateProtocolAlert)
 [![Version](https://img.shields.io/cocoapods/v/lsj-PrivateProtocolAlert.svg?style=flat)](https://cocoapods.org/pods/lsj-PrivateProtocolAlert)
 [![License](https://img.shields.io/cocoapods/l/lsj-PrivateProtocolAlert.svg?style=flat)](https://cocoapods.org/pods/lsj-PrivateProtocolAlert)
