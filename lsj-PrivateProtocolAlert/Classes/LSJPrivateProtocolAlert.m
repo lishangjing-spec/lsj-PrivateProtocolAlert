@@ -84,7 +84,7 @@
 
 // MARK: - Method
 
--(void)show{
+-(bool)show{
     NSString *guide = [[NSUserDefaults standardUserDefaults] objectForKey:LSJPrivateProtocolAlertUserDefaultsKey];
     if(guide){
         if(_delegate && [_delegate respondsToSelector:@selector(lsjPrivateProtocolAlert_completion)]){
@@ -96,6 +96,7 @@
         [UIApplication sharedApplication].delegate.window.backgroundColor = [UIColor whiteColor];
         [UIApplication sharedApplication].delegate.window.rootViewController = self;
     }
+    return !guide;
 }
 
 

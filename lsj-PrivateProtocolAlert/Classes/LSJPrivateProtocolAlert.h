@@ -37,16 +37,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) UIColor *nomalTextColor;/**<  设置文字颜色 Default: 333333 */
 @property (nonatomic,strong) UIColor *highlightColor;/**<  设置《用户协议》《隐私政策》颜色 Default: 4A90E2 */
 
-
 // MARK: 隐私政策
 
 // 设置 URL
 @property (nonatomic,strong) NSURL *userAgreementURL;/**< 用户协议地址 */
 @property (nonatomic,strong) NSURL *privacyPolicyURL;/**< 隐私政策地址 */
 
-
-
--(void)show;/**< 显示弹窗 */
+/**
+ 是否成功显示
+    True: 成功展示：首次启动或未同意用户协议
+    False: 未成功展示：非首次启动，并已经同意过用户协议
+ */
+- (bool)show;
 
 @end
 
